@@ -1,0 +1,14 @@
+{
+  "name": "mtfrontend",
+  "version": "1.0.0",
+  "description": "Projeto Vazio para Aplicações Front-end",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "keywords": [
+    "angularjs"
+  ],
+  "author": "Marco Túlio de Ávila Santos",
+  "license": "MIT"
+}
