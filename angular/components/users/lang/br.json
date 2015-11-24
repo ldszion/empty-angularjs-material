@@ -1,0 +1,12 @@
+{
+    "users": {
+        "PROFILE": "Perfil",
+        "EDIT": "Editar",
+        "DELETE": "Remover",
+        "list": {
+            "TITLE": "Usuários",
+            "STAKE": "Estaca",
+            "WARD": "Ala"
+        }
+    }
+}

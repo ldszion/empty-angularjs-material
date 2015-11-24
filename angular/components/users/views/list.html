@@ -1,0 +1,71 @@
+<md-list layout="column" style="padding: 0" flex>
+    <md-subheader><span translate="users.list.TITLE">Título</span></md-subheader>
+    <!-- <md-divider></md-divider> -->
+    <md-list-item ng-repeat="user in vm.users" class="md-2-line md-clickable" style="padding-left: 16px" flex>
+        <img class="md-avatar" ng-src="{{ user.imageUrl }}"/>
+        <div class="md-list-item-text">
+            <h3>{{ user.name }}</h3>
+            <p>
+                <span translate="users.list.STAKE">Estaca</span> {{ user.stake }} - 
+                <span translate="users.list.WARD">Ala</span> {{ user.ward }}
+            </p>
+        </div>
+        <span flex></span>
+        <div hide-sm style="margin: 16px 0 0">
+            <span hide-md>{{ user.profile }}</span>
+            <md-menu md-position-mode="target-right target">
+                <md-button class="md-icon-button" aria-label="Notifications" ng-click="$mdOpenMenu()">
+                    <md-tooltip md-direction="top"><span translate="users.PROFILE">Perfil</span></md-tooltip>
+                    <md-icon md-svg-icon="action:account_circle"></md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon md-svg-icon="action:done"></md-icon>
+                            Administrador
+                        </md-button>
+                    </md-menu-item> 
+                    <md-menu-item class="md-active active">
+                        <md-button>
+                            <md-icon md-svg-icon=""></md-icon>
+                            Usuário
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+        <div style="margin: 16px 8px 16px 0">
+            <!-- TABLET > -->
+            <div hide-sm>
+                <md-button class="md-icon-button" aria-label="Notifications">
+                    <md-tooltip md-direction="top"><span translate="users.EDIT">Editar</span></md-tooltip>
+                    <md-icon md-svg-icon="editor:mode_edit"></md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Notifications">
+                    <md-tooltip md-direction="top"><span translate="users.DELETE">Remover</span></md-tooltip>
+                    <md-icon md-svg-icon="action:delete"></md-icon>
+                </md-button>
+            </div>
+            <!-- MOBILE -->
+            <md-menu hide-gt-sm md-position-mode="target-right target">
+                <md-button class="md-icon-button" aria-label="Notifications" ng-click="$mdOpenMenu()">
+                    <md-icon md-svg-icon="navigation:more_vert"></md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon md-svg-icon="editor:mode_edit"></md-icon>
+                            <span translate="users.EDIT">Editar</span>
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon md-svg-icon="action:delete"></md-icon>
+                            <span translate="users.DELETE">Remover</span>
+                        </md-button>
+                    </md-menu-item>    
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </md-list-item>
+</md-list>
