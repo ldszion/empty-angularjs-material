@@ -5,9 +5,12 @@
         .module('app')
         .config(Configuration);
 
-    Configuration.$inject = ['$mdIconProvider'];
+    Configuration.$inject = ['$mdIconProvider', '$translateProvider'];
 
-    function Configuration($mdIconProvider) {
+    function Configuration($mdIconProvider, $translateProvider) {
+        $translateProvider.useSanitizeValueStrategy('sanitize');
+        $translateProvider.preferredLanguage('br');
+
         $mdIconProvider
             .iconSet('action', 'img/iconsets/action-icons.svg', 24)
             .iconSet('alert', 'img/iconsets/alert-icons.svg', 24)

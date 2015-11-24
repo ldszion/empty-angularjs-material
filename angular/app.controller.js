@@ -9,6 +9,5 @@
 
     function AppController() {
         var vm = this;
-        vm.projectName = "Projeto X";
     }
 })();

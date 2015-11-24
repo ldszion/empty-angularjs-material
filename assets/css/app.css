@@ -11,3 +11,20 @@ p {
 md-sidenav md-list md-list-item .md-button .md-ripple-container {
     border-radius: 0 !important;
 }
+
+#content, #content md-content {
+    background-color: #f9f9f9;
+}
+
+md-list .active {
+    background-color: rgba(158,158,158,0.2);
+}
+/* Correção de avatar em md-list */
+md-list md-list-item img.md-avatar {
+    margin-top: 16px !important;
+    margin-bottom: 16px;
+}
+
+md-icon.success {
+    color: #259b24;
+}
