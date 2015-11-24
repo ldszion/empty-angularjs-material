@@ -6,18 +6,20 @@ var rimraf = require('gulp-rimraf');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var templateCache = require('gulp-angular-templatecache');
+var translate = require('gulp-angular-translate');
 
 gulp.task('default', ['build', 'watch']);
 gulp.task('test', test);
 gulp.task('build', ['jshint', 'build:vendor', 'build:source', 'css:vendor', 'css:source']);
 
 gulp.task('build:vendor', buildVendor);
-gulp.task('build:source', ['templates'], buildSource);
+gulp.task('build:source', ['templates', 'translate'], buildSource);
 gulp.task('css:vendor', buildCssVendor);
 gulp.task('css:source', buildCssSource);
-gulp.task('jshint', jshint);
-gulp.task('watch', watch);
+gulp.task('jshint', jshintFunction);
+gulp.task('watch', watchFunction);
 gulp.task('templates', templates);
+gulp.task('translate', translateFunction);
 // Estas tarefas devem ser executadas separadamente
 gulp.task('clean', clean);
 
@@ -33,11 +35,13 @@ var paths = {
     vendor: [
         'node_modules/angular/angular.min.js',
         'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-sanitize/angular-sanitize.min.js',
         'node_modules/angular-aria/angular-aria.min.js',
         'node_modules/angular-material/angular-material.min.js',
         'node_modules/angular-material-icons/angular-material-icons.min.js',
         'node_modules/angular-material/angular-material-mocks.min.js',
         'node_modules/angular-messages/angular-messages.min.js',
+        'node_modules/angular-translate/dist/angular-translate.min.js',
         'node_modules/angular-ui-router/build/angular-ui-router.min.js',
         'node_modules/angular-loading-bar/build/loading-bar.min.js',
         'node_modules/ngstorage/ngStorage.min.js',
@@ -92,8 +96,11 @@ function clean() {
         .pipe(rimraf());
 }
 
-function jshint() {
-    gulp.src(paths.source)
+function jshintFunction() {
+    gulp.src(paths.source.concat([
+        '!./angular/templates.js',
+        '!./angular/translations.js'
+    ]))
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(jshint.reporter("fail"));
@@ -108,6 +115,13 @@ function templates() {
         .pipe(gulp.dest(paths.baseDir));
 }
 
-function watch() {
-    return gulp.watch([paths.source, paths.baseDir + '**/*.html'], ['build']);
+function translateFunction() {
+    gulp.src('./angular/**/*.json')
+        .pipe(translate())
+        .pipe(gulp.dest(paths.baseDir));
+}
+
+function watchFunction() {
+    gulp.watch([paths.baseDir + '**/*'], ['build']);
+    gulp.watch(paths.sourceCss, ['build']);
 }
