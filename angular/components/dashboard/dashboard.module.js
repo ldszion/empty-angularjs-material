@@ -3,6 +3,7 @@
 
     angular
         .module('app.dashboard', [
-            'ngMaterial'
+            'ngMaterial',
+            'pascalprecht.translate'
         ]);
 })();
