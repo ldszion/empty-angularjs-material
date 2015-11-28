@@ -1,5 +1,5 @@
 <md-content class="md-padding" layout-wrap>
-    <form name="userform" ng-init="vm.user.gender = male">
+    <form ng-submit="vm.submit()" name="userform">
         <md-card>
             <md-toolbar class="grey">
                 <h1 class="md-toolbar-tools" translate="users.NEW_USER">Novo Usuário</h1>
@@ -47,14 +47,14 @@
                 </md-input-container>
 
                 <!-- SEXO -->
-                <md-radio-group ng-required="true" ng-model="vm.user.gender" class="md-primary">
-                    <label translate="users.GENDER">Sexo</label>
-                    <md-radio-button value="male" aria-label="gender">
-                        <span translate="users.MALE">Homem</span>
+                <p class="md-subhead" translate="users.GENDER">Sexo</p>
+                <md-radio-group ng-model="vm.user.gender" class="md-primary">
+                    <md-radio-button ng-repeat="gender in vm.genders" ng-value="gender.value" aria-label="{{ gender.label }}">
+                        <span translate="{{ gender.label }}">Homem</span>
                     </md-radio-button>
-                    <md-radio-button value="female" aria-label="gender">
+                    <!-- <md-radio-button value="female" aria-label="gender">
                         <span translate="users.FEMALE">Mulher</span>
-                    </md-radio-button>
+                    </md-radio-button> -->
                 </md-radio-group>
                 <!-- END BASIC -->
 
@@ -94,9 +94,10 @@
                     <!-- ESTACA -->
                     <md-input-container flex>
                         <label translate="users.STAKE">Estaca</label>
-                        <md-select name="stake" ng-model="vm.user.stake" required>
-                            <md-option value="1">One</md-option>
-                            <md-option value="2">Two</md-option>
+                        <md-select name="stake" md-on-close="vm.loadWards()" ng-model="vm.user.stake" required>
+                            <md-option ng-repeat="stake in vm.stakes" ng-value="stake.id">
+                                {{ stake.name }}
+                            </md-option>
                         </md-select>
                         <div class="errors" ng-messages="userform.stake.$error" ng-class="{invisible: userform.stake.$untouched}">
                             <div ng-message="required">
@@ -108,9 +109,8 @@
                     <!-- ALA -->
                     <md-input-container flex>
                         <label translate="users.WARD">Ala</label>
-                        <md-select name="ward" ng-model="vm.user.ward" required>
-                            <md-option value="1">One</md-option>
-                            <md-option value="2">Two</md-option>
+                        <md-select ng-disabled="vm.wards === null" name="ward" ng-model="vm.user.ward" required>
+                            <md-option ng-repeat="ward in vm.wards" ng-value="ward.id">{{ ward.name }}</md-option>
                         </md-select>
                         <div class="errors" ng-messages="userform.ward.$error" ng-class="{invisible: userform.ward.$untouched}">
                             <div ng-message="required">

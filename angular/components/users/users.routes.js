@@ -32,7 +32,7 @@
                 url: '/new',
                 views: {
                     'content': {
-                        controller: 'UsersListController as vm',
+                        controller: 'UserFormController as vm',
                         templateUrl: 'users/views/new.html'
                     }
                 }
