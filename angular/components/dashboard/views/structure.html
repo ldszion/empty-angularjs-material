@@ -3,8 +3,7 @@
     <div layout="row" flex>
         <div id="sidenav" layout="column" ui-view="sidenav"></div>
         <div id="content" layout="column" flex>
-            <md-content layout="column">
-                <div ui-view="content"></div>
+            <md-content layout="column" ui-view="content" md-scroll-y flex>
             </md-content>
         </div>
     </div>
