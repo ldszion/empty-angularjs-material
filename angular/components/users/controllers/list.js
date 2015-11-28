@@ -9,7 +9,6 @@
 
     function UsersListController() {
         var vm = this;
-        vm.title = "UsersListController";
         vm.users = [{
             id: 1,
             name: 'Polyana Ferreira Souza de Ávila Santos',
