@@ -8,7 +8,6 @@
     Configuration.$inject = ['$mdIconProvider', '$translateProvider'];
 
     function Configuration($mdIconProvider, $translateProvider) {
-        $translateProvider.useSanitizeValueStrategy('sanitize');
         $translateProvider.preferredLanguage('br');
 
         $mdIconProvider
