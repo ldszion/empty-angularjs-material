@@ -5,9 +5,12 @@
         .module('app')
         .config(Configuration);
 
-    Configuration.$inject = ['$mdIconProvider', '$translateProvider'];
+    Configuration.$inject = ['$mdIconProvider', '$translateProvider', 'cfpLoadingBarProvider'];
 
-    function Configuration($mdIconProvider, $translateProvider) {
+    function Configuration($mdIconProvider, $translateProvider, cfpLoadingBarProvider) {
+        // configuração do limite em ms para mostrar o progressbar
+        cfpLoadingBarProvider.latencyThreshold = 100;
+        // idioma preferido
         $translateProvider.preferredLanguage('br');
 
         $mdIconProvider
