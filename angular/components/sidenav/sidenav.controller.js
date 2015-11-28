@@ -9,14 +9,34 @@
 
     function SidenavController() {
         var vm = this;
-        vm.menus = [{
-            text: 'sidenav.PANEL',
+
+        vm.sections = [{
+            name: 'sidenav.PANEL',
+            type: 'link',
             icon: 'action:dashboard',
-            sref: 'app.dashboard'
+            state: 'app.dashboard'
+            // name: 'Top Menu 1',
+            // type: 'toggle',
+            // icon: 'action:dashboard',
+            // submenus: [{
+            //     name: 'Submenu 1',
+            //     type: 'link',
+            //     state: 'app.dashboard'
+            // }, {
+            //     name: 'Submenu 2',
+            //     type: 'link',
+            //     state: 'app.users'
+            // }]
         }, {
-            text: 'sidenav.USERS',
+            name: 'sidenav.USERS_ADD',
+            type: 'link',
+            icon: 'social:person_add',
+            state: 'app.users.new'
+        }, {
+            name: 'sidenav.USERS',
+            type: 'link',
             icon: 'social:people',
-            sref: 'app.users'
+            state: 'app.users.list'
         }];
     }
 })();
