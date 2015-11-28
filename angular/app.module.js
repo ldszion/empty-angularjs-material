@@ -8,6 +8,7 @@
             'ngMaterial',
             'ngSanitize',
             'ngMessages',
+            'angular-loading-bar',
             'ui.utils.masks',
             'pascalprecht.translate',
 
