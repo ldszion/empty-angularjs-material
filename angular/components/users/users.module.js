@@ -2,5 +2,8 @@
     'use strict';
 
     angular
-        .module('app.users', []);
+        .module('app.users', [
+            'ui.router',
+            'ngMessages'
+        ]);
 })();
