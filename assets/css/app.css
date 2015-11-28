@@ -28,3 +28,12 @@ md-list md-list-item img.md-avatar {
 md-icon.success {
     color: #259b24;
 }
+
+/* COLORS */
+.grey {
+    background: rgb(66,66,66) !important;
+}
+
+.invisible {
+    visibility: hidden !important;
+}
