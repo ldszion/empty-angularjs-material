@@ -47,11 +47,12 @@ var paths = {
         'node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js',
         'node_modules/ngstorage/ngStorage.min.js',
         'node_modules/restangular/dist/restangular.min.js',
+        'node_modules/angular-loading-bar/build/loading-bar.min.js',
     ],
     vendorCss: [
         'node_modules/angular-material/angular-material.min.css',
         'node_modules/angular-material/angular-material.layouts.min.css',
-        'node_modules/angular-loading-bar/build/loading-bar.min.css'
+        'node_modules/angular-loading-bar/build/loading-bar.min.css',
     ],
     sourceCss: [
         'assets/**/*.css'
