@@ -14,6 +14,7 @@
         $stateProvider
             .state('app', {
                 abstract: true,
+                url: '',
                 views: {
                     'index': {
                         templateUrl: 'dashboard/views/structure.html'
@@ -22,7 +23,7 @@
                         templateUrl: 'toolbar/toolbar.html'
                     },
                     'sidenav@app': {
-                        templateUrl: 'sidenav/sidenav.html',
+                        templateUrl: 'sidenav/views/sidenav.html',
                         controller: 'SidenavController as vm'
                     }
                 }
@@ -40,15 +41,6 @@
                 views: {
                     'index@': {
                         templateUrl: 'dashboard/views/404.html'
-                    }
-                }
-            })
-            .state('app.users', {
-                url: '/users',
-                views: {
-                    'content': {
-                        controller: 'UsersListController as vm',
-                        templateUrl: 'users/views/list.html'
                     }
                 }
             });
