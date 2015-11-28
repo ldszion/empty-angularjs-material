@@ -1,7 +1,6 @@
 <md-list layout="column" style="padding: 0" flex>
     <md-subheader><span translate="users.list.TITLE">Título</span></md-subheader>
-    <!-- <md-divider></md-divider> -->
-    <md-list-item ng-repeat="user in vm.users" class="md-2-line md-clickable" style="padding-left: 16px" flex>
+    <md-list-item ng-repeat="user in vm.users" class="md-2-line" style="padding-left: 16px">
         <img class="md-avatar" ng-src="{{ user.imageUrl }}"/>
         <div class="md-list-item-text">
             <h3>{{ user.name }}</h3>
