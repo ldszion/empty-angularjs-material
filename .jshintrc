@@ -24,5 +24,6 @@
     "afterEach": false,
     "module": false,
     "inject": false
-  }
+  },
+  "devel": true
 }
