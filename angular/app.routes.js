@@ -17,7 +17,9 @@
                 url: '',
                 views: {
                     'index': {
-                        templateUrl: 'dashboard/views/structure.html'
+                        templateUrl: 'dashboard/views/structure.html',
+                        controller: 'AppController',
+                        controllerAs: 'app',
                     },
                     'toolbar@app': {
                         templateUrl: 'toolbar/toolbar.html'

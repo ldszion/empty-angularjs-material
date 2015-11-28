@@ -8,6 +8,6 @@
     AppController.$inject = [];
 
     function AppController() {
-        var vm = this;
+        var app = this;
     }
 })();
