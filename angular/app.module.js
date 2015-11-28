@@ -7,6 +7,8 @@
             'ngMdIcons',
             'ngMaterial',
             'ngSanitize',
+            'ngMessages',
+            'ui.utils.masks',
             'pascalprecht.translate',
 
             // Módulos do app

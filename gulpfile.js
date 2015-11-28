@@ -44,6 +44,7 @@ var paths = {
         'node_modules/angular-translate/dist/angular-translate.min.js',
         'node_modules/angular-ui-router/build/angular-ui-router.min.js',
         'node_modules/angular-loading-bar/build/loading-bar.min.js',
+        'node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js',
         'node_modules/ngstorage/ngStorage.min.js',
         'node_modules/restangular/dist/restangular.min.js',
     ],
