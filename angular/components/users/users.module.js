@@ -4,6 +4,7 @@
     angular
         .module('app.users', [
             'ui.router',
-            'ngMessages'
+            'ngMessages',
+            'validation.match',
         ]);
 })();
