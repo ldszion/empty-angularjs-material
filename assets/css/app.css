@@ -29,11 +29,25 @@ md-icon.success {
     color: #259b24;
 }
 
+md-input-container.md-input-invalid .input-icon {
+    color: #F44336;
+}
+
 /* COLORS */
 .grey {
     background: rgb(66,66,66) !important;
 }
+.text-white {
+    color: #fff;
+}
 
 .invisible {
     visibility: hidden !important;
+}
+
+md-toast {
+    margin-top: 64px;
+}
+md-toast[md-theme=warn] {
+    background-color: #F44336;
 }
