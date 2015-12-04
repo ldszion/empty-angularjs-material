@@ -47,7 +47,10 @@ var paths = {
         'node_modules/angular-input-masks/releases/angular-input-masks-standalone.min.js',
         'node_modules/ngstorage/ngStorage.min.js',
         'node_modules/restangular/dist/restangular.min.js',
+        'node_modules/underscore/underscore-min.js',
         'node_modules/angular-loading-bar/build/loading-bar.min.js',
+        'node_modules/angular-validation-match/dist/angular-validation-match.min.js',
+        'node_modules/satellizer/satellizer.min.js',
     ],
     vendorCss: [
         'node_modules/angular-material/angular-material.min.css',
@@ -55,7 +58,8 @@ var paths = {
         'node_modules/angular-loading-bar/build/loading-bar.min.css',
     ],
     sourceCss: [
-        'assets/**/*.css'
+        'assets/vendor/**/*.css',
+        'assets/css/**/*.css',
     ],
     dist: './public/'
 };
@@ -124,6 +128,10 @@ function translateFunction() {
 }
 
 function watchFunction() {
-    gulp.watch([paths.baseDir + '**/*'], ['build']);
+    gulp.watch([
+        paths.baseDir + '**/*',
+        paths.baseDir + '!templates.js',
+        paths.baseDir + '!translations.js',
+    ], ['build']);
     gulp.watch(paths.sourceCss, ['build']);
 }

@@ -37,6 +37,16 @@
             type: 'link',
             icon: 'social:people',
             state: 'app.users.list'
+        }, {
+            name: 'auth.AUTHENTICATION',
+            type: 'link',
+            icon: 'action:verified_user',
+            state: 'app.auth.login'
+        }, {
+            name: 'core.CORE',
+            type: 'link',
+            icon: 'action:extension',
+            state: 'app.core.examples'
         }];
     }
 })();
