@@ -8,7 +8,7 @@ var stylish = require('jshint-stylish');
 var templateCache = require('gulp-angular-templatecache');
 var translate = require('gulp-angular-translate');
 
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['watch']);
 gulp.task('test', test);
 gulp.task('build', ['jshint', 'build:vendor', 'build:source', 'css:vendor', 'css:source']);
 
@@ -17,7 +17,7 @@ gulp.task('build:source', ['templates', 'translate'], buildSource);
 gulp.task('css:vendor', buildCssVendor);
 gulp.task('css:source', buildCssSource);
 gulp.task('jshint', jshintFunction);
-gulp.task('watch', watchFunction);
+gulp.task('watch', ['build'], watchFunction);
 gulp.task('templates', templates);
 gulp.task('translate', translateFunction);
 // Estas tarefas devem ser executadas separadamente
@@ -135,5 +135,4 @@ function watchFunction() {
         paths.baseDir + '**/*',
         paths.sourceCss
     ], ['build']);
-    gulp.watch(paths.sourceCss, ['build']);
 }
