@@ -76,7 +76,10 @@ function buildVendor() {
 }
 
 function buildSource() {
-    return gulp.src(paths.source)
+    return gulp.src(paths.source.concat([
+        'assets/js/templates.js',
+        'assets/js/translations.js'
+    ]))
         .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(paths.dist + 'js/'));
@@ -118,20 +121,19 @@ function templates() {
             standalone: true,
             module: 'app.templates'
         }))
-        .pipe(gulp.dest(paths.baseDir));
+        .pipe(gulp.dest('assets/js/'));
 }
 
 function translateFunction() {
     gulp.src('./angular/**/*.json')
         .pipe(translate())
-        .pipe(gulp.dest(paths.baseDir));
+        .pipe(gulp.dest('assets/js/'));
 }
 
 function watchFunction() {
     gulp.watch([
         paths.baseDir + '**/*',
-        paths.baseDir + '!templates.js',
-        paths.baseDir + '!translations.js',
+        paths.sourceCss
     ], ['build']);
     gulp.watch(paths.sourceCss, ['build']);
 }

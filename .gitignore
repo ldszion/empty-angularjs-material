@@ -1,6 +1,6 @@
 node_modules/
 public/js/
 public/css/
-angular/templates.js
-angular/translations.js
+assets/js/templates.js
+assets/js/translations.js
 .phpintel/
