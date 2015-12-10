@@ -8,6 +8,7 @@
             'ngMaterial',
             'ngSanitize',
             'ngMessages',
+            'ngAnimate',
             'restangular',
             'angular-loading-bar',
             'ui.utils.masks',
