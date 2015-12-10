@@ -10,6 +10,7 @@
     function Configuration($mdIconProvider, $translateProvider, cfpLoadingBarProvider) {
         // configuração do limite em ms para mostrar o progressbar
         cfpLoadingBarProvider.latencyThreshold = 100;
+        cfpLoadingBarProvider.includeSpinner = false;
         // idioma preferido
         $translateProvider.preferredLanguage('br');
 
