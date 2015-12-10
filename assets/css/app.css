@@ -41,6 +41,27 @@ md-input-container.md-input-invalid .input-icon {
     color: #fff;
 }
 
+#content md-content.search {
+    background: rgb(66,66,66);
+}
+#content md-content.search * {
+    color: white;
+}
+#content md-content.search md-input-container.md-input-focused input{
+    border-color: white;
+}
+#content md-content.search md-input-container {
+    padding: 15px 0;
+    font-size: 24px;
+}
+#content md-content.search input {
+    line-height: 40px !important;
+}
+#content md-content.search md-icon {
+    top: 26px;
+}
+
+
 .invisible {
     visibility: hidden !important;
 }
@@ -50,4 +71,34 @@ md-toast {
 }
 md-toast[md-theme=warn] {
     background-color: #F44336;
+}
+
+.animate-repeat.ng-leave {
+    -webkit-transition: opacity ease 0.5s, height ease 0.5s;
+    -o-transition: opacity ease 0.5s, height ease 0.5s;
+    transition: opacity ease 0.5s, height ease 0.5s;
+}
+
+.animate-repeat.remove.ng-leave.ng-leave-active {
+    background: #EF9A9A;
+}
+.animate-repeat.ng-leave.ng-leave-active {
+    opacity:0;
+    height: 0;
+    min-height: 0;
+    overflow: hidden;
+    -webkit-transition: opacity ease 0.5s, height ease 0.5s;
+    -o-transition: opacity ease 0.5s, height ease 0.5s;
+    transition: opacity ease 0.5s, height ease 0.5s;
+}
+
+#loading-bar .bar {
+    background: #F44336;
+}
+/* Fancy blur effect */
+#loading-bar .peg {
+  -moz-box-shadow: #F44336 1px 0 6px 1px;
+  -ms-box-shadow: #F44336 1px 0 6px 1px;
+  -webkit-box-shadow: #F44336 1px 0 6px 1px;
+  box-shadow: #F44336 1px 0 6px 1px;
 }
