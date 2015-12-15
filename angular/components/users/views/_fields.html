@@ -1,6 +1,6 @@
 <div layout="row">
     <!-- PRIMEIRO NOME -->
-    <md-input-container md-no-float style="padding-bottom: 10px">
+    <md-input-container md-no-float style="padding-bottom: 10px" flex>
         <md-icon class="input-icon" md-svg-icon="social:person" aria-label="Person Icon"></md-icon>
         <input type="text" name="firstName" required
             placeholder="{{ 'users.FIRST_NAME' | translate }}"
@@ -13,7 +13,7 @@
         </div>
     </md-input-container>
     <!-- ÚLTIMO NOME -->
-    <md-input-container md-no-float style="padding-bottom: 10px">
+    <md-input-container md-no-float style="padding-bottom: 10px" flex>
         <input type="text" name="lastName" required
             placeholder="{{ 'users.LAST_NAME' | translate }}"
             ng-model="vm.user.lastName">
@@ -44,7 +44,10 @@
 <!-- SENHA -->
 <md-input-container md-no-float style="padding-bottom: 0px">
     <md-icon class="input-icon" md-svg-icon="action:lock" aria-label="Password Icon"></md-icon>
-    <input type="password" name="password" required
+    <input type="password" name="password"
+        ng-required="!vm.user.id"
+        maxlength="128"
+        minlength="6"
         placeholder="{{ 'users.PASSWORD' | translate }}"
         ng-model="vm.user.password">
     <div ng-messages="userform.password.$error" ng-class="{invisible: userform.password.$untouched}">
@@ -52,14 +55,18 @@
             <span translate="users.form.REQUIRED_FIELD"
                 translate-value-field="{{ 'users.PASSWORD' | translate }}"></span>
         </div>
+        <div ng-message="minlength">
+            <span translate="users.form.MIN_PASSWORD"></span>
+        </div>
     </div>
 </md-input-container>
 <!-- CONFIRMACAO DE SENHA -->
 <md-input-container md-no-float style="padding-bottom: 0px">
     <md-icon class="input-icon" md-svg-icon="action:done_all" aria-label="Password Confirmation Icon"></md-icon>
-    <input type="password" name="passwordConfirmation" required
+    <input type="password" name="passwordConfirmation"
+        ng-required="!vm.user.id"
         placeholder="{{ 'users.PASSWORD_CONFIRMATION' | translate }}"
-        ng-model="vm.user.passwordConfirmation"
+        ng-model="vm.passwordConfirmation"
         match="vm.user.password">
     <div ng-messages="userform.passwordConfirmation.$error" ng-class="{invisible: userform.passwordConfirmation.$untouched}">
         <div ng-message="required">
