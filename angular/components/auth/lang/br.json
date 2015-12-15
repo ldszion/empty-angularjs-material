@@ -20,6 +20,10 @@
             "CONGRATULATIONS": "Parabéns!",
             "YOU_SIGNED_UP_SUCCESSFULLY": "Seu cadastro foi feito com sucesso.",
             "WE_SENT_AN_EMAIL": "Enviamos um e-mail para confirmar seu cadastro.",
+        },
+        "profile": {
+            "ADMIN": "Administrador",
+            "USER": "Usuário",
         }
     }
 }
