@@ -1,6 +1,15 @@
 p {
     margin: 0 0 16px;
 }
+a.link {
+    opacity: 0.9;
+    color: inherit;
+    text-decoration: none;
+}
+a.link:hover {
+    opacity: 1;
+}
+
 /**
  * Hide when Angular is not yet loaded and initialized
  */
@@ -94,6 +103,7 @@ md-toast[md-theme=warn] {
 
 #loading-bar .bar {
     background: #F44336;
+    top: 64px;
 }
 /* Fancy blur effect */
 #loading-bar .peg {
@@ -101,4 +111,56 @@ md-toast[md-theme=warn] {
   -ms-box-shadow: #F44336 1px 0 6px 1px;
   -webkit-box-shadow: #F44336 1px 0 6px 1px;
   box-shadow: #F44336 1px 0 6px 1px;
+}
+
+
+/* PROFILE */
+#profile-page .profile-wallpaper {
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+#profile-page .profile-wallpaper img {
+    border-radius: 10px;
+    width: 110%;
+    position: relative;
+    left: -5%;
+    top: -5%;
+    -webkit-filter: blur(50px);
+    -o-filter: blur(50px);
+    filter: blur(50px);
+}
+#profile-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: 8px;
+    height: 350px;
+}
+#fab-buttons {
+    height: 100%;
+}
+#fab-buttons button,
+#fab-buttons a {
+    bottom: -32px;
+    right: 24px;
+}
+#profile-title .title h2 { margin: 5px 0; }
+#profile-title .title p { margin-bottom: 0; }
+#profile-page .profile-image {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 100%;
+    /*border: 5px solid white;*/
+    float: right;
+    margin: 0 32px;
+}
+#profile-page .profile-image img{
+    width: 200px;
+    height: 200px;
+}
+#profile-page #profile-content {
+    /*border: 1px solid blue;*/
 }
