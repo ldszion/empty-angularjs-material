@@ -5,13 +5,16 @@
         .module('app.users')
         .controller('UserFormController', UserFormController);
 
-    UserFormController.$inject = ['$timeout', '$rootScope', '$scope'];
+    UserFormController.$inject = ['$timeout', '$rootScope', '$scope', '$state'];
 
-    function UserFormController($timeout, $rootScope, $scope) {
+    function UserFormController($timeout, $rootScope, $scope, $state) {
         var vm = this;
 
-        vm.user = {};
-        vm.user.gender = 'male';
+        vm.user = {
+            profile: 'USER',
+            imageUrl: 'img/avatar.png',
+            gender: 'male'
+        };
         vm.submit = submit;
         vm.loadWards = loadWards;
         vm.stakes = [
@@ -36,7 +39,8 @@
         }
 
         function submit() {
-            console.log(vm.user);
+            $scope.parent.users.push(vm.user);
+            $state.go('app.users.list');
         }
 
         function loadWards() {
