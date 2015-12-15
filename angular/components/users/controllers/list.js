@@ -5,24 +5,23 @@
         .module('app.users')
         .controller('UsersListController', UsersListController);
 
-    UsersListController.$inject = [];
+    UsersListController.$inject = ['Toaster', '$scope', '$state'];
 
-    function UsersListController() {
+    function UsersListController(Toaster, $scope, $state) {
         var vm = this;
-        vm.users = [{
-            id: 1,
-            name: 'Polyana Ferreira Souza de Ávila Santos',
-            imageUrl: 'http://lorempixel.com/50/50/people/9',
-            profile: 'Usuário',
-            stake: 'Brasília',
-            ward: 'Guará II',
-        }, {
-            id: 2,
-            name: 'Marco Túlio de Ávila Santos',
-            imageUrl: 'http://lorempixel.com/50/50/people/10',
-            profile: 'Administrador',
-            stake: 'Brasília',
-            ward: 'Guará II',
-        }];
+        vm.remove = remove;
+        vm.save = save;
+        vm.edit = edit;
+
+        function remove (index) {
+            var user = $scope.parent.users[index];
+            $scope.parent.users.splice(index, 1);
+        }
+        function save (user) {
+            console.log('save user: ', user.name);
+        }
+        function edit (user) {
+            $state.go('app.users.edit', {id: user.id});
+        }
     }
 })();
