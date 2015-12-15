@@ -6,5 +6,6 @@
             'ui.router',
             'ngMessages',
             'validation.match',
+            'cfp.loadingBar',
         ]);
 })();
