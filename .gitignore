@@ -1,0 +1,6 @@
+node_modules/
+public/js/
+public/css/
+assets/js/templates.js
+assets/js/translations.js
+.phpintel/
